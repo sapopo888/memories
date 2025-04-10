@@ -14,9 +14,7 @@
 $(function(){
   var arry = [];
 
-  arry = [
-    '<%= asset_path('1.jpg') %>'
-    ];          
+  arry.push('<%= url_for(@album.photo)%>');
   
   $('#books').onebook(arry);
 });
