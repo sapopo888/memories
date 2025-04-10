@@ -1,3 +1,23 @@
-<% if @album.photo.attached? %>
-  <%= image_tag @album.photo %>
-<% end %>
+<div class="onbook-body">
+  <h1 id='onebook'>jquery.onebook3d.jsを使って画像を本をめくる様にします。<br>以下の画像をマウス右クリックしながら左右に移動させてみてください。</h1>
+  
+  <div style="padding: 0 30px 30px 30px;">
+    <div id="books"></div>
+  </div>
+</div>
+
+<script src="../../../js/jquery-1.11.0.min.js"></script>
+<script src="../../../js/jquery.mousewheel.min.js"></script>
+<script src="../../../js/three.min.js"></script>
+<script src="../../../js/jquery.onebook3d-2.33.js"></script>
+<script>
+$(function(){
+  var arry = [];
+
+  arry = [
+    '<%= asset_path('1.jpg') %>'
+    ];          
+  
+  $('#books').onebook(arry);
+});
+</script>
