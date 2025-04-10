@@ -1,2 +1,3 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
+<% if @album.photo.attached? %>
+  <%= image_tag @album.photo %>
+<% end %>

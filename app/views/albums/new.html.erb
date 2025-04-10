@@ -1,1 +1,22 @@
 
+<div class="container">
+  <%= form_with model: @album, local: true do |form| %>
+  
+    <div>
+      <%= form.label :title, 'タイトル' %>
+      <%= form.text_field :title %>
+    </div>
+  
+    <div>
+      <%= form.label :description, '説明' %>
+      <%= form.text_area :description %>
+    </div>
+  
+    <div>
+      <%= form.label :photo, '写真' %>
+      <%= form.file_field :photo %>
+    </div>
+  
+      <%= form.submit '保存'%>
+    <% end %>
+</div>
