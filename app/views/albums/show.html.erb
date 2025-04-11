@@ -6,16 +6,17 @@
   </div>
 </div>
 
+<% if @album.photos.attached? %>
+  <% @album.photos.each do |photo| %>
+    <li><%= image_tag photo %></li>
+  <% end %>
+<% end %>
+
 <script src="../../../js/jquery-1.11.0.min.js"></script>
 <script src="../../../js/jquery.mousewheel.min.js"></script>
 <script src="../../../js/three.min.js"></script>
 <script src="../../../js/jquery.onebook3d-2.33.js"></script>
 <script>
-$(function(){
-  var arry = [];
 
-  arry.push('<%= url_for(@album.photo)%>');
-  
-  $('#books').onebook(arry);
-});
+
 </script>

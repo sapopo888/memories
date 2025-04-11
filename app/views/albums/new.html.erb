@@ -13,8 +13,8 @@
     </div>
   
     <div>
-      <%= form.label :photo, '写真' %>
-      <%= form.file_field :photo %>
+      <%= form.label :photos, '写真' %>
+      <%= form.file_field :photos, multiple: true %>
     </div>
   
       <%= form.submit '保存'%>
