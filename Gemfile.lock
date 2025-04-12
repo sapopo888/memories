@@ -90,7 +90,7 @@ GEM
       debug_inspector (>= 1.2.0)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
-    brakeman (7.0.0)
+    brakeman (7.0.2)
       racc
     builder (3.3.0)
     capybara (3.40.0)
@@ -370,7 +370,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootsnap
-  brakeman
+  brakeman (~> 7.0.2)
   capybara
   cssbundling-rails
   debug
@@ -381,6 +381,9 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
+  rubocop
+  rubocop-performance
+  rubocop-rails
   rubocop-rails-omakase
   selenium-webdriver
   solid_cable

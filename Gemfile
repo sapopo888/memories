@@ -47,7 +47,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
-  gem "brakeman", require: false
+  gem "brakeman", "~> 7.0.2", require: false
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
@@ -65,4 +65,8 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+
+  gem "rubocop", require: false # Ruby用、必要に応じてターミナルで実行（Bundlerによって自動で読み込まれないようにする）
+  gem "rubocop-performance", require: false # 性能低下につながるコード、同上
+  gem "rubocop-rails", require: false # Rails用、同上
 end
