@@ -1,20 +1,5 @@
-<!--
-# assete/images/配下の複数画像ループで成功
-<script>
-  var array = [];
 
-  $(function(){
-    array = [
-      <% (1..3).each do |i| %>
-        '<%= image_path("#{i}.jpg") %>'<%= ',' unless i == 3 %>
-      <% end %>
-    ];
 
-  $('#books').onebook(array);
-  });
-</script>
-
-# 
 
 
 

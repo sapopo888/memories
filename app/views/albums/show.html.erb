@@ -18,7 +18,7 @@
 <div class="hidden" style="display: none">
   <% if @album.photos.attached? %>
     <% @album.photos.each do |photo| %>
-      <p class="js-photo-url"><%= url_for(photo) %></p>
+      < class="js-photo-url"><%= url_for(photo) %></p>
     <% end %>
   <% end %>
 </div>
@@ -30,14 +30,12 @@
 <script>
   let array = [];
 
-  // Active Storageでアップロードされた複数画像のパスを取得
-  let albumPhotoUrls = document.querySelectorAll('.js-photo-url')
-
-  console.log("photoのURL取得", albumPhotoUrls);
-
-  albumPhotoUrls.forEach(photoUrl => {
-    array.push(photoUrl.textContent);
-  });
+  // Active Storageで複数枚画像アップロードしたものを配列arrayにループで渡す
+  <% if @album.photos.attached? %>
+    <% @album.photos.each do |photo| %>
+      array.push('<%= url_for(photo) %>');
+    <% end %>
+  <% end %>
 
   console.log("arrayにURL要素を順に追加", array);
 
