@@ -1,3 +1,25 @@
+<!-- Active Storageで取得した複数枚画像のURL取得 -->
+
+<div class="hidden" style="display: none">
+  <% if @album.photos.attached? %>
+    <% @album.photos.each do |photo| %>
+      <p class="js-photo-url"><%= url_for(photo) %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<script>
+  $(function() {
+    let array = [];
+    let albumPhotoUrls = document.querySelectorAll('.js-photo-url');
+
+    albumPhotoUrls.forEach(photoUrl => {
+      array.push(photoUrl.textContent);
+    });
+
+    $('#books').onebook(array);
+  });
+</script>
 
 
 
@@ -7,4 +29,3 @@
 
 
 
--->
