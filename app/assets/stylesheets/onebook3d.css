@@ -1,0 +1,17 @@
+.onebook-body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  text-align: center;
+  width:100%;
+  margin:0px;
+  padding:0px;
+  background-color: #000;
+  color: #fff;
+}
+#onebook{
+  text-align: center;
+  font-size: 20px;
+  line-height: 2em;
+  padding: 30px 0 0 0;
+}
