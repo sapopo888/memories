@@ -18,7 +18,7 @@
 <div class="hidden" style="display: none">
   <% if @album.photos.attached? %>
     <% @album.photos.each do |photo| %>
-      <p class="js-photo-url"><%= rails_blob_url(photo, only_path: true) %></p>
+      <p class="js-photo-url"><%= url_for(photo) %></p>
     <% end %>
   <% end %>
 </div>
