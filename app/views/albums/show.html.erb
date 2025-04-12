@@ -6,17 +6,39 @@
   </div>
 </div>
 
+<!--
 <% if @album.photos.attached? %>
   <% @album.photos.each do |photo| %>
     <li><%= image_tag photo %></li>
   <% end %>
 <% end %>
+-->
+
+<!-- Active Storageで取得した複数枚画像のURL取得 -->
+<div class="hidden" style="display: none">
+  <% if @album.photos.attached? %>
+    <% @album.photos.each do |photo| %>
+      <%= image_tag photo.variant(resize_to_limit: [400, 300]) %>
+    <% end %>
+  <% end %>
+</div>
 
 <script src="../../../js/jquery-1.11.0.min.js"></script>
 <script src="../../../js/jquery.mousewheel.min.js"></script>
 <script src="../../../js/three.min.js"></script>
 <script src="../../../js/jquery.onebook3d-2.33.js"></script>
 <script>
+  let array = [];
 
+  // Active Storageで複数枚画像アップロードしたものを配列arrayにループで渡す
+  <% if @album.photos.attached? %>
+    <% @album.photos.each do |photo| %>
+      array.push('<%= url_for(photo.variant(resize_to_limit: [400, 300])) %>');
+    <% end %>
+  <% end %>
+
+  console.log("arrayにURL要素を順に追加", array);
+
+  $('#books').onebook(array);
 
 </script>
